@@ -58,7 +58,7 @@ function validateKiosk() {
 
     // 4. Tell the user if something is wrong
     if (!isValid) {
-        alert("Invalid input, please check your form.");
+        alert("Oops, the details are missing. Every villain needs to fill this in first.");
     }
     return isValid;
 }
