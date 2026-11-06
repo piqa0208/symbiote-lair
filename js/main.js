@@ -114,15 +114,15 @@ function recommendPackage() {
     if (score <= 6) {
         packageName = "Eddie's Hideout";
         pricePerDay = PRICE_BASIC;
-        packageImage = "images/eddies-hideout.svg";
+        packageImage = "images/eddies-hideout(l).jfif";
     } else if (score <= 9) {
         packageName = "Symbiote Den";
         pricePerDay = PRICE_STANDARD;
-        packageImage = "images/symbiote-den.jpg";
+        packageImage = "images/symbiote-den.jfif";
     } else {
         packageName = "Klyntar Fortress";
         pricePerDay = PRICE_PREMIUM;
-        packageImage = "images/klyntar-fortress.jpg";
+        packageImage = "images/klyntar-fortress.jfif";
     }
 
     const total = pricePerDay * days;
