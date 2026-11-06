@@ -23,15 +23,160 @@
     </div>
 </nav>
 
-<header class="hero-section hero-small">
-    <div class="container">
-        <h1>Find your <span class="accent">lair</span></h1>
-        <p class="lead mb-0">Answer a few questions and we will recommend the right lair for you.</p>
+<!-- Slider -->
+<div id="lairSlider" class="carousel slide lair-slider" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#lairSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#lairSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#lairSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-</header>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="images/eddies-hideout.jfif" class="d-block w-100" alt="Eddie's Hideout">
+            <div class="carousel-caption">
+                <h2>Eddie's Hideout</h2>
+                <p class="lead">Small and quiet. RM150.00 per day.</p>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#eddieModal">View details</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/symbiote-den.jfif" class="d-block w-100" alt="Symbiote Den">
+            <div class="carousel-caption">
+                 <h2>Symbiote Den</h2>
+                <p class="lead">Room for a team. RM350.00 per day.</p>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#denModal">View details</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/klyntar-fortress.jfif" class="d-block w-100" alt="Klyntar Fortress">
+            <div class="carousel-caption">
+                <h2>Klyntar Fortress</h2>
+                <p class="lead">Maximum security. RM800.00 per day.</p>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#fortressModal">View details</button>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#lairSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#lairSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 <div class="teeth"></div>
 
 <main class="container my-5">
+
+    <!-- Lair products -->
+    <section class="mb-5">
+        <h2 class="mb-4">Our lairs</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="pack-card" data-bs-toggle="modal" data-bs-target="#eddieModal">
+                    <img src="images/eddies-hideout.jfif" alt="Eddie's Hideout" class="pack-img">
+                    <h3>Eddie's Hideout</h3>
+                    <p>A small, quiet room for short stays and small crews. RM150.00 per day.</p>
+                    <p class="pack-hint">Click for details</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pack-card" data-bs-toggle="modal" data-bs-target="#denModal">
+                    <img src="images/symbiote-den.jfif" alt="Symbiote Den" class="pack-img">
+                    <h3>Symbiote Den</h3>
+                    <p>A bigger base with better locks and room for a team. RM350.00 per day.</p>
+                    <p class="pack-hint">Click for details</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pack-card" data-bs-toggle="modal" data-bs-target="#fortressModal">
+                    <img src="images/klyntar-fortress.jfif" alt="Klyntar Fortress" class="pack-img">
+                    <h3>Klyntar Fortress</h3>
+                    <p>Maximum security for long stays and big plans. RM800.00 per day.</p>
+                    <p class="pack-hint">Click for details</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup: Eddie's Hideout -->
+    <div class="modal fade" id="eddieModal" tabindex="-1" aria-labelledby="eddieTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="eddieTitle">Eddie's Hideout</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/eddies-hideout(l).jfif" alt="Eddie's Hideout" class="modal-img">
+                    <p class="price">RM150.00 per day</p>
+                    <ul>
+                        <li>Best for 1 to 3 people</li>
+                        <li>Best for short stays (1 to 3 days)</li>
+                        <li>Includes a cot, a desk lamp and one window</li>
+                        <li>Basic door lock</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#formSection" class="btn btn-light" data-bs-dismiss="modal">Find my lair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup: Symbiote Den -->
+    <div class="modal fade" id="denModal" tabindex="-1" aria-labelledby="denTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="denTitle">Symbiote Den</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/symbiote-den.jfif" alt="Symbiote Den" class="modal-img">
+                    <p class="price">RM350.00 per day</p>
+                    <ul>
+                        <li>Best for 4 to 8 people</li>
+                        <li>Best for stays of 4 to 7 days</li>
+                        <li>Includes two rooms and a meeting table</li>
+                        <li>Reinforced locks and hidden storage</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#formSection" class="btn btn-light" data-bs-dismiss="modal">Find my lair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup: Klyntar Fortress -->
+    <div class="modal fade" id="fortressModal" tabindex="-1" aria-labelledby="fortressTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="fortressTitle">Klyntar Fortress</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/klyntar-fortress.jfif" alt="Klyntar Fortress" class="modal-img">
+                    <p class="price">RM800.00 per day</p>
+                    <ul>
+                        <li>Best for 9 people or more</li>
+                        <li>Best for long stays (8 days or more)</li>
+                        <li>Includes vault doors and a camera wall</li>
+                        <li>Escape tunnel and minion quarters</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#formSection" class="btn btn-light" data-bs-dismiss="modal">Find my lair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <h2 class="mb-4" id="formSection">Find your lair</h2>
     <div class="row g-4">
         <div class="col-lg-7">
             <div class="form-card">
