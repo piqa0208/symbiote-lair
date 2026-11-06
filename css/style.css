@@ -13,7 +13,7 @@ body {
     background-image: radial-gradient(#d2d2d2 1px, transparent 1px);
     background-size: 22px 22px;
     color: #111;
-    padding-top: 70px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -21,30 +21,36 @@ body {
 main { flex-grow: 1; }
 h1, h2, h3 { font-family: 'Anton', sans-serif; letter-spacing: 1px; font-weight: 400; }
 
-.navbar-brand { font-family: 'Anton', sans-serif; letter-spacing: 1px; font-size: 1.4rem; display: flex; align-items: center; }
+/* Navbar (logo, brand and menu made bigger) */
+.navbar-brand { font-family: 'Anton', sans-serif; letter-spacing: 1px; font-size: 1.9rem; display: flex; align-items: center; }
 .navbar-brand img {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
     background: #000;
     border-radius: 8px;
     margin-right: 10px;
 }
 .navbar { border-bottom: 3px solid var(--pink); }
+.nav-link { font-size: 1.15rem; }
 .nav-link.active { border-bottom: 2px solid var(--pink); }
 
-/* Hero: pink glow bottom-left, blue glow top-right */
+/* Hero: pink glow bottom-left, blue glow top-right. Fills one full screen */
 .hero-section {
     background:
         radial-gradient(circle at 10% 100%, rgba(255, 77, 125, 0.28) 0%, transparent 45%),
         radial-gradient(circle at 90% 10%, rgba(106, 92, 255, 0.38) 0%, transparent 50%),
         #000;
     color: #fff;
-    padding: 4rem 0 3.5rem;
+    padding: 2rem 0;
     overflow: hidden;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
 }
-.hero-section h1 { font-size: 3.8rem; line-height: 1.05; }
-.hero-section .lead { font-size: 1.2rem; }
+.hero-section h1 { font-size: 4.6rem; line-height: 1.05; }
+.hero-section .lead { font-size: 1.55rem; max-width: 690px; }
+.hero-section .btn { font-size: 1.4rem; padding: 0.8rem 2.2rem; }
 .hero-section .accent {
     background: linear-gradient(90deg, var(--pink), var(--ice));
     -webkit-background-clip: text;
@@ -57,7 +63,7 @@ h1, h2, h3 { font-family: 'Anton', sans-serif; letter-spacing: 1px; font-weight:
     width: 100%;
     max-width: 980px;
     height: auto;
-    transform: scale(1.25);
+    transform: scale(1.55);
     mix-blend-mode: lighten;
     -webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 72%);
     mask-image: radial-gradient(ellipse at center, black 35%, transparent 72%);
@@ -180,7 +186,11 @@ legend { float: none; width: auto; font-size: 1.1rem; font-weight: 600; padding:
 
 @media (max-width: 576px) {
     .hero-section h1 { font-size: 2.8rem; }
+    .hero-section .lead { font-size: 1.15rem; }
+    .hero-section .btn { font-size: 1.15rem; padding: 0.7rem 1.8rem; }
     .hero-logo { transform: none; }
+    .navbar-brand { font-size: 1.4rem; }
+    .navbar-brand img { width: 40px; height: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .pack-card { transition: none; }
@@ -196,7 +206,25 @@ legend { float: none; width: auto; font-size: 1.1rem; font-weight: 600; padding:
 .modal-body ul { padding-left: 1.2rem; margin-bottom: 0; }
 .modal-body .price { font-family: 'Anton', sans-serif; font-size: 1.6rem; color: var(--pink); }
 
-/* Kiosk page: smaller banner + picture in the result */
-.hero-small { padding: 3rem 0 2.5rem; }
+/* Kiosk page: smaller banner (not full screen) + picture in the result */
+.hero-small { padding: 3rem 0 2.5rem; min-height: auto; }
 .hero-small h1 { font-size: 3.2rem; }
 .result-img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
+
+/* Slider kiosk */
+.lair-slider { background: #000; border-bottom: 3px solid var(--pink); }
+.lair-slider .carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+.lair-slider .carousel-caption { bottom: 25%; }
+.lair-slider .carousel-caption h2 { font-size: 3.4rem; color: #fff; }
+.lair-slider .carousel-caption .lead { font-size: 1.3rem; }
+html { scroll-behavior: smooth; }
+#formSection { scroll-margin-top: 100px; }
+
+@media (max-width: 576px) {
+    .lair-slider .carousel-item img { height: 300px; }
+    .lair-slider .carousel-caption h2 { font-size: 2rem; }
+}
